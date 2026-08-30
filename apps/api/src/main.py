@@ -1,3 +1,21 @@
+import sys
+from pathlib import Path
+
+# Add root packages and services to Python module search path
+_SRC = Path(__file__).resolve().parent
+_API = _SRC.parent
+_ROOT = _API.parent.parent
+for _p in [
+    _SRC,
+    _API,
+    _ROOT / "packages" / "database",
+    _ROOT / "packages" / "common",
+    _ROOT / "services" / "agent_orchestrator",
+    _ROOT / "services" / "rag_engine",
+]:
+    if str(_p) not in sys.path and _p.exists():
+        sys.path.insert(0, str(_p))
+
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -17,7 +35,11 @@ async def lifespan(app: FastAPI):
     await init_db()
     yield
     logger.info(f"Shutting down {settings.APP_NAME}")
-    engine.dispose()
+    if engine:
+        try:
+            await engine.dispose()
+        except Exception:
+            pass
 
 def create_app() -> FastAPI:
     """Factory function to construct the FastAPI application."""
