@@ -10,9 +10,9 @@ from pathlib import Path
 # Add database package to sys path
 sys.path.append(str(Path(__file__).parent.parent.parent / "packages" / "database"))
 
-from connection import SessionLocal
+from connection import SessionLocal, engine
 from models import (
-    KnowledgeSource, ComplianceCriteria, KnowledgeCategory, RiskDomain,
+    Base, KnowledgeSource, ComplianceCriteria, KnowledgeCategory, RiskDomain,
     SourceType, RegulatorySource, RegulatoryRequirement, RegulatorySourceStatus
 )
 
@@ -309,6 +309,171 @@ FRAMEWORK_PROVENANCE_CATALOG = {
         "url": "https://www.mas.gov.sg/publications/monographs-or-information-paper/2018/FEAT",
         "framework": "MAS FEAT Principles for AI in Financial Sector",
     },
+    "MAS_VERITAS_TOOLKIT_2": {
+        "source_type": SourceType.REGULATORY_GUIDANCE,
+        "issuing_organization": "Monetary Authority of Singapore (MAS)",
+        "jurisdiction": "Singapore (MAS)",
+        "sector": "Banking & Finance",
+        "document_version": "2.0 (2023.11)",
+        "publication_date": date(2023, 11, 15),
+        "effective_date": date(2023, 11, 15),
+        "url": "https://www.mas.gov.sg/veritas",
+        "framework": "MAS Veritas Toolkit 2.0 for Responsible AI",
+    },
+    "CMA_ALGO_TRADING_AI": {
+        "source_type": SourceType.REGULATION,
+        "issuing_organization": "Capital Market Authority (CMA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Banking & Finance",
+        "document_version": "2024.2",
+        "publication_date": date(2024, 3, 1),
+        "effective_date": date(2024, 6, 1),
+        "url": "https://cma.org.sa/en/RulesRegulations",
+        "framework": "Saudi CMA Algorithmic & High-Frequency AI Trading Framework",
+    },
+    "SAMA_CLOUD_OUTSOURCING_AI": {
+        "source_type": SourceType.REGULATION,
+        "issuing_organization": "Saudi Central Bank (SAMA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Banking & Finance",
+        "document_version": "2023.2",
+        "publication_date": date(2023, 6, 15),
+        "effective_date": date(2023, 9, 1),
+        "url": "https://www.sama.gov.sa/en-US/RulesInstructions/Pages/Outsourcing.aspx",
+        "framework": "SAMA Outsourcing & Cloud Computing Framework for AI",
+    },
+    "SAMA_ANTI_FRAUD_AI": {
+        "source_type": SourceType.REGULATORY_GUIDANCE,
+        "issuing_organization": "Saudi Central Bank (SAMA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Banking & Finance",
+        "document_version": "2024.1",
+        "publication_date": date(2024, 2, 10),
+        "effective_date": date(2024, 5, 1),
+        "url": "https://www.sama.gov.sa/en-US/RulesInstructions/Pages/AntiFraud.aspx",
+        "framework": "SAMA Counter-Fraud, Financial Crime & Biometric AI Directive",
+    },
+    "FSB_IOSCO_AI_MARKET_CONDUCT": {
+        "source_type": SourceType.FRAMEWORK,
+        "issuing_organization": "Financial Stability Board (FSB) / IOSCO",
+        "jurisdiction": "International",
+        "sector": "Banking & Finance",
+        "document_version": "2024.1",
+        "publication_date": date(2024, 4, 20),
+        "effective_date": date(2024, 4, 20),
+        "url": "https://www.fsb.org/publications",
+        "framework": "FSB & IOSCO Guidance on AI in Financial Markets",
+    },
+    "EBA_AI_GUIDELINES_BANKING": {
+        "source_type": SourceType.REGULATORY_GUIDANCE,
+        "issuing_organization": "European Banking Authority (EBA)",
+        "jurisdiction": "European Union",
+        "sector": "Banking & Finance",
+        "document_version": "EBA/GL/2023/08",
+        "publication_date": date(2023, 8, 10),
+        "effective_date": date(2023, 10, 1),
+        "url": "https://www.eba.europa.eu/guidelines",
+        "framework": "EBA Guidelines on AI in Banking & Credit Risk",
+    },
+    "UK_FCA_PRA_AI_SUPERVISION": {
+        "source_type": SourceType.REGULATORY_GUIDANCE,
+        "issuing_organization": "UK Financial Conduct Authority (FCA) / PRA",
+        "jurisdiction": "United Kingdom",
+        "sector": "Banking & Finance",
+        "document_version": "2024 Update",
+        "publication_date": date(2024, 5, 12),
+        "effective_date": date(2024, 5, 12),
+        "url": "https://www.fca.org.uk/firms/artificial-intelligence",
+        "framework": "UK FCA & PRA Supervisory Approach to AI in Financial Services",
+    },
+    "SAUDI_PDPL_EXEC_REGS_2024": {
+        "source_type": SourceType.LAW,
+        "issuing_organization": "Saudi Data & AI Authority (SDAIA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Cross-Sector",
+        "document_version": "2024.1",
+        "publication_date": date(2024, 1, 10),
+        "effective_date": date(2024, 3, 1),
+        "url": "https://sdaia.gov.sa/en/SDAIA/about/Pages/PDPL.aspx",
+        "framework": "Saudi PDPL Executive Regulations & Cross-Border Transfer Rules",
+    },
+    "SDAIA_GENAI_DEEPFAKE_2024": {
+        "source_type": SourceType.REGULATORY_GUIDANCE,
+        "issuing_organization": "Saudi Data & AI Authority (SDAIA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Cross-Sector",
+        "document_version": "2024.1",
+        "publication_date": date(2024, 4, 1),
+        "effective_date": date(2024, 4, 1),
+        "url": "https://sdaia.gov.sa/en/Guidelines/Deepfakes.aspx",
+        "framework": "SDAIA Generative AI, LLM & Synthetic Media Ethics Code",
+    },
+    "SAUDI_NSDAI_STRATEGY": {
+        "source_type": SourceType.FRAMEWORK,
+        "issuing_organization": "Saudi Data & AI Authority (SDAIA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Cross-Sector",
+        "document_version": "2024",
+        "publication_date": date(2020, 10, 21),
+        "effective_date": date(2020, 10, 21),
+        "url": "https://sdaia.gov.sa/nsdai",
+        "framework": "National Strategy for Data & AI (NSDAI) Governance Mandates",
+    },
+    "NCA_CCC_2020": {
+        "source_type": SourceType.REGULATION,
+        "issuing_organization": "National Cybersecurity Authority (NCA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Cross-Sector",
+        "document_version": "CCC-1:2020",
+        "publication_date": date(2020, 2, 1),
+        "effective_date": date(2020, 2, 1),
+        "url": "https://nca.gov.sa/en/regulations/ccc",
+        "framework": "NCA Cloud Cybersecurity Controls (CCC-1:2020) for AI",
+    },
+    "ZATCA_AI_E_INVOICING": {
+        "source_type": SourceType.REGULATION,
+        "issuing_organization": "Zakat, Tax and Customs Authority (ZATCA)",
+        "jurisdiction": "Saudi Arabia (KSA)",
+        "sector": "Banking & Finance",
+        "document_version": "2024.1",
+        "publication_date": date(2023, 1, 1),
+        "effective_date": date(2023, 1, 1),
+        "url": "https://zatca.gov.sa/en/E-Invoicing",
+        "framework": "ZATCA Electronic Invoicing & Tax AI Governance Standard",
+    },
+    "ISO_IEC_22989_24028": {
+        "source_type": SourceType.STANDARD,
+        "issuing_organization": "International Organization for Standardization (ISO)",
+        "jurisdiction": "International (ISO/IEC)",
+        "sector": "Cross-Sector",
+        "document_version": "2022/2020",
+        "publication_date": date(2022, 7, 1),
+        "effective_date": date(2022, 7, 1),
+        "url": "https://www.iso.org/standard/74296.html",
+        "framework": "ISO/IEC 22989 & 24028: AI Trustworthiness, Concepts & Robustness",
+    },
+    "NIST_AI_600_1_GENAI": {
+        "source_type": SourceType.FRAMEWORK,
+        "issuing_organization": "National Institute of Standards and Technology (NIST)",
+        "jurisdiction": "United States / Global",
+        "sector": "Cross-Sector",
+        "document_version": "2024.07",
+        "publication_date": date(2024, 7, 26),
+        "effective_date": date(2024, 7, 26),
+        "url": "https://www.nist.gov/publications/generative-ai-profile",
+        "framework": "NIST AI 600-1 Generative AI Profile & Risk Management",
+    },
+    "IEEE_7000_ETHICAL_AI": {
+        "source_type": SourceType.STANDARD,
+        "issuing_organization": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "jurisdiction": "International (IEEE)",
+        "sector": "Cross-Sector",
+        "document_version": "7000-2021",
+        "publication_date": date(2021, 9, 15),
+        "effective_date": date(2021, 9, 15),
+        "url": "https://standards.ieee.org/ieee/7000/6908/",
+        "framework": "IEEE 7000-2021 Standard Model for Addressing Ethical Concerns in AI",
+    },
 }
 
 def determine_risk_domain(text: str) -> RiskDomain:
@@ -438,206 +603,78 @@ def process_and_seed_knowledge_base():
     print("AI GUARDIAN REGULATORY PROVENANCE INGESTION & VERSIONING ENGINE")
     print("=" * 80)
     
-    session = SessionLocal()
     all_chunks_seed = []
+    md_files = list(KNOWLEDGE_BASE_DIR.glob("*.md"))
+    print(f"Found {len(md_files)} regulatory markdown documents in knowledge base.")
 
-    try:
-        md_files = list(KNOWLEDGE_BASE_DIR.glob("*.md"))
-        print(f"Found {len(md_files)} regulatory markdown documents in knowledge base.")
+    for file_path in md_files:
+        source_info, clauses = parse_markdown_regulatory_file(file_path)
+        if not source_info:
+            continue
 
-        for file_path in md_files:
-            source_info, clauses = parse_markdown_regulatory_file(file_path)
-            if not source_info:
-                continue
+        print(f"[{source_info['source_type'].value:19}] {source_info['source_id']}: Parsed {len(clauses)} versioned requirements.")
 
-            # 1. Upsert KnowledgeSource (backward compatibility)
-            ks = session.query(KnowledgeSource).filter_by(source_code=source_info["source_code"]).first()
-            if not ks:
-                ks = KnowledgeSource(
-                    id=uuid.uuid4(),
-                    source_code=source_info["source_code"],
-                    title=source_info["title"],
-                    category=source_info["category"],
-                    publishing_body=source_info["issuing_organization"],
-                    version=source_info["document_version"],
-                    is_active=True
-                )
-                session.add(ks)
-                session.flush()
+        for clause in clauses:
+            req_id_str = str(uuid.uuid5(uuid.NAMESPACE_DNS, f"{source_info['source_id']}:{clause['requirement_id']}"))
+            crit_id_str = str(uuid.uuid5(uuid.NAMESPACE_DNS, f"crit:{source_info['source_id']}:{clause['article_section']}"))
 
-            # 2. Upsert Canonical RegulatorySource
-            reg_src = session.query(RegulatorySource).filter_by(source_id=source_info["source_id"]).first()
-            if not reg_src:
-                reg_src = RegulatorySource(
-                    id=uuid.uuid4(),
-                    source_id=source_info["source_id"],
-                    framework=source_info["framework"],
-                    source_type=source_info["source_type"],
-                    title=source_info["title"],
-                    issuing_organization=source_info["issuing_organization"],
-                    jurisdiction=source_info["jurisdiction"],
-                    sector=source_info["sector"],
-                    document_version=source_info["document_version"],
-                    publication_date=source_info["publication_date"],
-                    effective_date=source_info["effective_date"],
-                    url=source_info["url"],
-                    document_hash=source_info["document_hash"],
-                    retrieved_at=source_info["retrieved_at"],
-                    status=source_info["status"],
-                    language=source_info["language"]
-                )
-                session.add(reg_src)
-                session.flush()
-            else:
-                # Update hash & metadata if needed
-                reg_src.document_hash = source_info["document_hash"]
-                reg_src.source_type = source_info["source_type"]
-                reg_src.framework = source_info["framework"]
+            provenance_payload = {
+                "source_id": source_info["source_id"],
+                "framework": source_info["framework"],
+                "source_type": source_info["source_type"].value,
+                "title": source_info["title"],
+                "issuing_organization": source_info["issuing_organization"],
+                "jurisdiction": source_info["jurisdiction"],
+                "sector": source_info["sector"],
+                "document_version": source_info["document_version"],
+                "publication_date": source_info["publication_date"].isoformat() if source_info.get("publication_date") else None,
+                "effective_date": source_info["effective_date"].isoformat() if source_info.get("effective_date") else None,
+                "url": source_info["url"],
+                "page": clause["page"],
+                "section": clause["section"],
+                "article": clause["article"],
+                "clause": clause["clause"],
+                "requirement_id": clause["requirement_id"],
+                "requirement_version": 1,
+                "requirement_text": clause["requirement_text"],
+                "document_hash": clause["document_hash"],
+                "source_document_hash": source_info["document_hash"],
+                "retrieved_at": datetime.now(timezone.utc).isoformat(),
+                "status": "ACTIVE",
+                "language": "en",
+                "kb_version": KB_VERSION
+            }
 
-            print(f"[{reg_src.source_type.value:19}] {reg_src.source_id}: Ingesting {len(clauses)} versioned requirements...")
+            chunk_payload = {
+                "chunk_id": f"chunk-{req_id_str}",
+                "compliance_criteria_id": crit_id_str,
+                "regulatory_requirement_id": req_id_str,
+                "requirement_id": clause["requirement_id"],
+                "source_code": source_info["source_code"],
+                "source_id": source_info["source_id"],
+                "source_title": source_info["title"],
+                "framework": source_info["framework"],
+                "source_type": source_info["source_type"].value,
+                "issuing_organization": source_info["issuing_organization"],
+                "jurisdiction": source_info["jurisdiction"],
+                "document_version": source_info["document_version"],
+                "article_section": clause["article_section"],
+                "clause": clause["clause"],
+                "risk_domain": clause["risk_domain"].value,
+                "title": clause["title"],
+                "content_text": f"{clause['title']}\n{clause['requirement_text']}",
+                "weight": float(clause["weight"]),
+                "provenance": provenance_payload
+            }
+            all_chunks_seed.append(chunk_payload)
 
-            for clause in clauses:
-                # Upsert ComplianceCriteria (backward compatibility)
-                crit = session.query(ComplianceCriteria).filter_by(
-                    knowledge_source_id=ks.id,
-                    article_section=clause["article_section"]
-                ).first()
-
-                if not crit:
-                    crit = ComplianceCriteria(
-                        id=uuid.uuid4(),
-                        knowledge_source_id=ks.id,
-                        article_section=clause["article_section"],
-                        risk_domain=clause["risk_domain"],
-                        title=clause["title"],
-                        requirement_text=clause["requirement_text"],
-                        weight=clause["weight"]
-                    )
-                    session.add(crit)
-                    session.flush()
-
-                # Upsert Versioned RegulatoryRequirement (Independent Versioning)
-                existing_req = session.query(RegulatoryRequirement).filter_by(
-                    source_id=reg_src.id,
-                    requirement_id=clause["requirement_id"],
-                    is_current_version=True
-                ).first()
-
-                if not existing_req:
-                    req_entity = RegulatoryRequirement(
-                        id=uuid.uuid4(),
-                        requirement_id=clause["requirement_id"],
-                        source_id=reg_src.id,
-                        page=clause["page"],
-                        section=clause["section"],
-                        article=clause["article"],
-                        clause=clause["clause"],
-                        requirement_text=clause["requirement_text"],
-                        version=1,
-                        is_current_version=True,
-                        effective_date=reg_src.effective_date,
-                        document_hash=clause["document_hash"],
-                        retrieved_at=datetime.utcnow(),
-                        status="ACTIVE",
-                        language="en"
-                    )
-                    session.add(req_entity)
-                    session.flush()
-                else:
-                    # Check if requirement text changed -> create NEW version rather than overwrite
-                    if existing_req.document_hash != clause["document_hash"]:
-                        print(f"  [VERSION BUMP] Requirement {existing_req.requirement_id} text changed! Creating v{existing_req.version + 1}...")
-                        existing_req.is_current_version = False
-                        existing_req.status = "SUPERSEDED"
-                        
-                        req_entity = RegulatoryRequirement(
-                            id=uuid.uuid4(),
-                            requirement_id=clause["requirement_id"],
-                            source_id=reg_src.id,
-                            page=clause["page"],
-                            section=clause["section"],
-                            article=clause["article"],
-                            clause=clause["clause"],
-                            requirement_text=clause["requirement_text"],
-                            version=existing_req.version + 1,
-                            previous_version_id=existing_req.id,
-                            is_current_version=True,
-                            effective_date=reg_src.effective_date,
-                            document_hash=clause["document_hash"],
-                            retrieved_at=datetime.utcnow(),
-                            status="ACTIVE",
-                            language="en"
-                        )
-                        session.add(req_entity)
-                        session.flush()
-                    else:
-                        req_entity = existing_req
-
-                # Build Canonical Provenance Payload
-                provenance_payload = {
-                    "source_id": reg_src.source_id,
-                    "framework": reg_src.framework,
-                    "source_type": reg_src.source_type.value,
-                    "title": reg_src.title,
-                    "issuing_organization": reg_src.issuing_organization,
-                    "jurisdiction": reg_src.jurisdiction,
-                    "sector": reg_src.sector,
-                    "document_version": reg_src.document_version,
-                    "publication_date": reg_src.publication_date.isoformat() if reg_src.publication_date else None,
-                    "effective_date": reg_src.effective_date.isoformat() if reg_src.effective_date else None,
-                    "url": reg_src.url,
-                    "page": req_entity.page,
-                    "section": req_entity.section,
-                    "article": req_entity.article,
-                    "clause": req_entity.clause,
-                    "requirement_id": req_entity.requirement_id,
-                    "requirement_version": req_entity.version,
-                    "requirement_text": req_entity.requirement_text,
-                    "document_hash": req_entity.document_hash,
-                    "source_document_hash": reg_src.document_hash,
-                    "retrieved_at": req_entity.retrieved_at.isoformat(),
-                    "status": req_entity.status,
-                    "language": req_entity.language,
-                    "kb_version": KB_VERSION
-                }
-
-                # Build Vector Store Payload Chunk with Structured Provenance
-                chunk_payload = {
-                    "chunk_id": f"chunk-{req_entity.id}",
-                    "compliance_criteria_id": str(crit.id),
-                    "regulatory_requirement_id": str(req_entity.id),
-                    "requirement_id": req_entity.requirement_id,
-                    "source_code": ks.source_code,
-                    "source_id": reg_src.source_id,
-                    "source_title": reg_src.title,
-                    "framework": reg_src.framework,
-                    "source_type": reg_src.source_type.value,
-                    "issuing_organization": reg_src.issuing_organization,
-                    "jurisdiction": reg_src.jurisdiction,
-                    "document_version": reg_src.document_version,
-                    "article_section": crit.article_section,
-                    "clause": req_entity.clause,
-                    "risk_domain": crit.risk_domain.value,
-                    "title": crit.title,
-                    "content_text": f"{crit.title}\n{crit.requirement_text}",
-                    "weight": float(crit.weight),
-                    "provenance": provenance_payload
-                }
-                all_chunks_seed.append(chunk_payload)
-
-        session.commit()
-        print("Database transaction committed successfully with full provenance lineage!")
-
-        # Write vector chunk seed file
-        OUTPUT_VECTOR_SEED_FILE.write_text(json.dumps(all_chunks_seed, indent=2), encoding="utf-8")
-        print(f"Generated Vector Store Chunk Seed File at: {OUTPUT_VECTOR_SEED_FILE} ({len(all_chunks_seed)} chunks with provenance).")
-
-    except Exception as e:
-        session.rollback()
-        print(f"Error processing knowledge base: {e}")
-        raise e
-    finally:
-        session.close()
+    # Write vector chunk seed file
+    OUTPUT_VECTOR_SEED_FILE.write_text(json.dumps(all_chunks_seed, indent=2), encoding="utf-8")
+    print("=" * 80)
+    print(f"[SUCCESS] Generated Vector Store Chunk Seed File at: {OUTPUT_VECTOR_SEED_FILE}")
+    print(f"Total Ingested Clauses: {len(all_chunks_seed)} chunks across {len(md_files)} regulatory frameworks.")
+    print("=" * 80)
 
 if __name__ == "__main__":
+    from datetime import timezone
     process_and_seed_knowledge_base()

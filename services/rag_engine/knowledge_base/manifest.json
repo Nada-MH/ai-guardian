@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
-  "description": "AI Guardian Regulatory Knowledge Base Manifest - Dual-Layer Structure",
-  "total_sources": 15,
+  "version": "2.4.0",
+  "description": "AI Guardian Enterprise Regulatory Knowledge Base Manifest - Dual-Layer Structure",
+  "total_sources": 36,
   "layers": {
     "core_ai_governance": {
-      "description": "International and Saudi national AI governance frameworks always included in every assessment.",
+      "description": "International, regional, and Saudi national AI governance and cybersecurity frameworks applied across all enterprise AI assessments.",
       "sources": [
         {
           "source_code": "ISO_IEC_42001",
@@ -23,6 +23,14 @@
           "risk_domains": ["risk_management", "model_governance", "human_oversight"]
         },
         {
+          "source_code": "ISO_IEC_22989_24028",
+          "file": "iso_iec_22989_24028.md",
+          "title": "ISO/IEC 22989 & 24028: AI Trustworthiness, Concepts & Robustness",
+          "publishing_body": "ISO / IEC",
+          "version": "2022/2020",
+          "risk_domains": ["cybersecurity", "risk_management", "model_governance"]
+        },
+        {
           "source_code": "OECD_AI_PRINCIPLES",
           "file": "oecd_ai_principles.md",
           "title": "OECD Principles on Artificial Intelligence",
@@ -39,11 +47,51 @@
           "risk_domains": ["bias_fairness", "privacy", "data_governance", "human_oversight"]
         },
         {
+          "source_code": "EU_AI_ACT_2024",
+          "file": "eu_ai_act.md",
+          "title": "EU Artificial Intelligence Act (Regulation 2024/1689)",
+          "publishing_body": "European Parliament & Council",
+          "version": "2024/1689",
+          "risk_domains": ["model_governance", "risk_management", "transparency", "human_oversight"]
+        },
+        {
+          "source_code": "NIST_AI_RMF",
+          "file": "nist_ai_rmf.md",
+          "title": "NIST AI Risk Management Framework (AI RMF 1.0)",
+          "publishing_body": "NIST",
+          "version": "1.0",
+          "risk_domains": ["risk_management", "model_governance", "explainability"]
+        },
+        {
+          "source_code": "NIST_AI_600_1_GENAI",
+          "file": "nist_ai_600_1_genai.md",
+          "title": "NIST AI 600-1 Generative AI Profile & Risk Management",
+          "publishing_body": "NIST",
+          "version": "2024.07",
+          "risk_domains": ["model_governance", "cybersecurity", "privacy", "explainability"]
+        },
+        {
+          "source_code": "IEEE_7000_ETHICAL_AI",
+          "file": "ieee_7000_ethical_ai.md",
+          "title": "IEEE 7000-2021 Standard Model for Addressing Ethical Concerns in AI",
+          "publishing_body": "IEEE",
+          "version": "7000-2021",
+          "risk_domains": ["bias_fairness", "human_oversight", "model_governance"]
+        },
+        {
           "source_code": "SAUDI_PDPL",
           "file": "saudi_pdpl.md",
           "title": "Saudi Personal Data Protection Law (PDPL)",
           "publishing_body": "SDAIA",
           "version": "Royal Decree M/19",
+          "risk_domains": ["privacy", "data_governance", "regulatory_compliance"]
+        },
+        {
+          "source_code": "SAUDI_PDPL_EXEC_REGS_2024",
+          "file": "saudi_pdpl_executive_regulations.md",
+          "title": "Saudi PDPL Executive Regulations & Cross-Border Transfer Rules",
+          "publishing_body": "SDAIA",
+          "version": "2024.1",
           "risk_domains": ["privacy", "data_governance", "regulatory_compliance"]
         },
         {
@@ -53,6 +101,30 @@
           "publishing_body": "SDAIA",
           "version": "1.0 (2023)",
           "risk_domains": ["bias_fairness", "explainability", "privacy", "human_oversight", "cybersecurity"]
+        },
+        {
+          "source_code": "SDAIA_GENAI_GUIDELINES",
+          "file": "sdaia_genai_guidelines.md",
+          "title": "SDAIA Generative AI and LLM Guidelines",
+          "publishing_body": "SDAIA",
+          "version": "2023.2",
+          "risk_domains": ["model_governance", "bias_fairness", "privacy"]
+        },
+        {
+          "source_code": "SDAIA_GENAI_DEEPFAKE_2024",
+          "file": "sdaia_generative_ai_deepfake_code.md",
+          "title": "SDAIA Generative AI, LLM & Synthetic Media Ethics Code",
+          "publishing_body": "SDAIA",
+          "version": "2024.1",
+          "risk_domains": ["explainability", "cybersecurity", "model_governance"]
+        },
+        {
+          "source_code": "SAUDI_NSDAI_STRATEGY",
+          "file": "saudi_national_ai_strategy_nsdai.md",
+          "title": "National Strategy for Data & AI (NSDAI) Governance Mandates",
+          "publishing_body": "SDAIA",
+          "version": "2024",
+          "risk_domains": ["model_governance", "data_governance", "regulatory_compliance"]
         },
         {
           "source_code": "NDMO_DATA_GOV",
@@ -71,6 +143,14 @@
           "risk_domains": ["cybersecurity", "risk_management"]
         },
         {
+          "source_code": "NCA_CCC_2020",
+          "file": "nca_ccc_cloud_cybersecurity.md",
+          "title": "NCA Cloud Cybersecurity Controls (CCC-1:2020) for AI",
+          "publishing_body": "NCA",
+          "version": "CCC-1:2020",
+          "risk_domains": ["cybersecurity", "third_party_risk"]
+        },
+        {
           "source_code": "ITU_AI_FRAMEWORK",
           "file": "itu_ai_framework.md",
           "title": "ITU AI Readiness Framework & ITU-T Y.3172",
@@ -81,13 +161,13 @@
       ]
     },
     "finance_regulatory": {
-      "description": "Financial sector-specific regulatory sources applied to all financial institution assessments.",
+      "description": "Financial sector-specific regulatory sources applied to all financial institution assessments across Banking, FinTech, Capital Markets, Insurance, and Wealth Management.",
       "sources": [
         {
           "source_code": "SAMA_AI_GUIDANCE_2024",
           "file": "sama_ai_guidance.md",
           "title": "SAMA AI and Technology Guidance for Banks",
-          "publishing_body": "SAMA",
+          "publishing_body": "Saudi Central Bank (SAMA)",
           "version": "2024.1",
           "risk_domains": ["model_governance", "explainability", "bias_fairness", "cybersecurity", "human_oversight"]
         },
@@ -95,9 +175,49 @@
           "source_code": "SAMA_CSF_2022",
           "file": "sama_cyber_security_framework.md",
           "title": "SAMA Cyber Security Framework for Financial Institutions",
-          "publishing_body": "SAMA",
+          "publishing_body": "Saudi Central Bank (SAMA)",
           "version": "CS-2022-01",
           "risk_domains": ["cybersecurity", "third_party_risk", "risk_management"]
+        },
+        {
+          "source_code": "SAMA_CLOUD_OUTSOURCING_AI",
+          "file": "sama_cloud_outsourcing_ai.md",
+          "title": "SAMA Outsourcing & Cloud Computing Framework for AI",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2023.2",
+          "risk_domains": ["third_party_risk", "cybersecurity", "data_governance"]
+        },
+        {
+          "source_code": "SAMA_ANTI_FRAUD_AI",
+          "file": "sama_anti_fraud_ai.md",
+          "title": "SAMA Counter-Fraud, Financial Crime & Biometric AI Directive",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2024.1",
+          "risk_domains": ["model_governance", "cybersecurity", "human_oversight"]
+        },
+        {
+          "source_code": "SAMA_OPEN_BANKING",
+          "file": "sama_open_banking.md",
+          "title": "SAMA Open Banking Framework - AI Provisions",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "v1.2",
+          "risk_domains": ["cybersecurity", "privacy", "third_party_risk", "data_governance"]
+        },
+        {
+          "source_code": "CMA_ALGO_TRADING_AI",
+          "file": "cma_algorithmic_trading_ai.md",
+          "title": "Saudi CMA Algorithmic & High-Frequency AI Trading Framework",
+          "publishing_body": "Capital Market Authority (CMA)",
+          "version": "2024.2",
+          "risk_domains": ["model_governance", "risk_management", "human_oversight"]
+        },
+        {
+          "source_code": "ZATCA_AI_E_INVOICING",
+          "file": "zatca_ai_einvoicing_governance.md",
+          "title": "ZATCA Electronic Invoicing & Tax AI Governance Standard",
+          "publishing_body": "ZATCA",
+          "version": "2024.1",
+          "risk_domains": ["data_governance", "regulatory_compliance"]
         },
         {
           "source_code": "MRM_SR_11_7",
@@ -106,14 +226,6 @@
           "publishing_body": "Federal Reserve / OCC / SAMA",
           "version": "SR 11-7 Adapt.",
           "risk_domains": ["model_governance", "third_party_risk", "risk_management"]
-        },
-        {
-          "source_code": "SAMA_OPEN_BANKING",
-          "file": "sama_open_banking.md",
-          "title": "SAMA Open Banking Framework - AI Provisions",
-          "publishing_body": "SAMA",
-          "version": "v1.2",
-          "risk_domains": ["cybersecurity", "privacy", "third_party_risk", "data_governance"]
         },
         {
           "source_code": "BASEL_AI_PRINCIPLES",
@@ -130,6 +242,54 @@
           "publishing_body": "FATF / SAMA",
           "version": "FATF Guidance 2024",
           "risk_domains": ["model_governance", "explainability", "cybersecurity", "privacy", "regulatory_compliance"]
+        },
+        {
+          "source_code": "FSB_IOSCO_AI_MARKET_CONDUCT",
+          "file": "fsb_iosco_ai_market_conduct.md",
+          "title": "FSB & IOSCO Guidance on AI in Financial Markets",
+          "publishing_body": "FSB / IOSCO",
+          "version": "2024.1",
+          "risk_domains": ["risk_management", "third_party_risk", "model_governance"]
+        },
+        {
+          "source_code": "EBA_AI_GUIDELINES_BANKING",
+          "file": "eba_ai_guidelines_banking.md",
+          "title": "EBA Guidelines on AI in Banking & Credit Risk",
+          "publishing_body": "European Banking Authority (EBA)",
+          "version": "EBA/GL/2023/08",
+          "risk_domains": ["model_governance", "bias_fairness", "explainability"]
+        },
+        {
+          "source_code": "UK_FCA_PRA_AI_SUPERVISION",
+          "file": "uk_fca_pra_ai_supervision.md",
+          "title": "UK FCA & PRA Supervisory Approach to AI in Financial Services",
+          "publishing_body": "UK FCA / PRA",
+          "version": "2024 Update",
+          "risk_domains": ["model_governance", "human_oversight", "bias_fairness"]
+        },
+        {
+          "source_code": "MAS_FEAT_PRINCIPLES",
+          "file": "mas_feat_principles.md",
+          "title": "Monetary Authority of Singapore (MAS) FEAT Principles",
+          "publishing_body": "MAS",
+          "version": "2019/2023",
+          "risk_domains": ["bias_fairness", "explainability", "human_oversight"]
+        },
+        {
+          "source_code": "MAS_VERITAS_TOOLKIT_2",
+          "file": "singapore_mas_veritas_toolkit.md",
+          "title": "MAS Veritas Toolkit 2.0 for Responsible AI",
+          "publishing_body": "MAS",
+          "version": "2.0 (2023.11)",
+          "risk_domains": ["bias_fairness", "explainability", "human_oversight", "data_governance"]
+        },
+        {
+          "source_code": "HKMA_AI_REGULATION",
+          "file": "hkma_ai_regulation.md",
+          "title": "HKMA High-level Principles on Artificial Intelligence",
+          "publishing_body": "Hong Kong Monetary Authority (HKMA)",
+          "version": "2019/2023",
+          "risk_domains": ["model_governance", "cybersecurity", "human_oversight"]
         }
       ]
     }
