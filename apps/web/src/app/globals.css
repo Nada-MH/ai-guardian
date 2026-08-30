@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #0B0F17;
+  color: #F8FAFC;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode Overrides for 10/10 Enterprise Governance Look */
+html.light-mode body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+html.light-mode ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Custom scrollbar for enterprise look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Light Mode Specific Utility Classes */
+html.light-mode .bg-\[\#0B0F17\] {
+  background-color: #F8FAFC !important;
+}
+html.light-mode .bg-\[\#0F172A\] {
+  background-color: #FFFFFF !important;
+}
+html.light-mode .bg-\[\#111827\] {
+  background-color: #FFFFFF !important;
+}
+html.light-mode .bg-\[\#0E1422\] {
+  background-color: #F1F5F9 !important;
+}
+html.light-mode .bg-\[\#111726\] {
+  background-color: #FFFFFF !important;
+}
+html.light-mode .bg-slate-900 {
+  background-color: #F1F5F9 !important;
+}
+html.light-mode .bg-slate-950 {
+  background-color: #E2E8F0 !important;
+}
+html.light-mode .border-slate-800 {
+  border-color: #E2E8F0 !important;
+}
+html.light-mode .border-slate-700 {
+  border-color: #CBD5E1 !important;
+}
+html.light-mode .text-white {
+  color: #0F172A !important;
+}
+html.light-mode .text-slate-100 {
+  color: #1E293B !important;
+}
+html.light-mode .text-slate-200 {
+  color: #334155 !important;
+}
+html.light-mode .text-slate-300 {
+  color: #475569 !important;
+}
+html.light-mode .text-slate-400 {
+  color: #64748B !important;
+}

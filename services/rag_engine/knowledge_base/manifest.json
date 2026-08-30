@@ -1,0 +1,137 @@
+{
+  "version": "1.0.0",
+  "description": "AI Guardian Regulatory Knowledge Base Manifest - Dual-Layer Structure",
+  "total_sources": 15,
+  "layers": {
+    "core_ai_governance": {
+      "description": "International and Saudi national AI governance frameworks always included in every assessment.",
+      "sources": [
+        {
+          "source_code": "ISO_IEC_42001",
+          "file": "iso_42001.md",
+          "title": "ISO/IEC 42001:2023 AI Management System (AIMS)",
+          "publishing_body": "ISO / IEC",
+          "version": "2023.12",
+          "risk_domains": ["model_governance", "risk_management", "data_governance", "explainability"]
+        },
+        {
+          "source_code": "ISO_IEC_23894",
+          "file": "iso_23894.md",
+          "title": "ISO/IEC 23894:2023 AI Risk Management Guidance",
+          "publishing_body": "ISO / IEC",
+          "version": "2023.02",
+          "risk_domains": ["risk_management", "model_governance", "human_oversight"]
+        },
+        {
+          "source_code": "OECD_AI_PRINCIPLES",
+          "file": "oecd_ai_principles.md",
+          "title": "OECD Principles on Artificial Intelligence",
+          "publishing_body": "OECD",
+          "version": "2024.05",
+          "risk_domains": ["bias_fairness", "explainability", "cybersecurity", "human_oversight"]
+        },
+        {
+          "source_code": "UNESCO_AI_ETHICS",
+          "file": "unesco_ai_ethics.md",
+          "title": "UNESCO Recommendation on the Ethics of AI",
+          "publishing_body": "UNESCO",
+          "version": "2021",
+          "risk_domains": ["bias_fairness", "privacy", "data_governance", "human_oversight"]
+        },
+        {
+          "source_code": "SAUDI_PDPL",
+          "file": "saudi_pdpl.md",
+          "title": "Saudi Personal Data Protection Law (PDPL)",
+          "publishing_body": "SDAIA",
+          "version": "Royal Decree M/19",
+          "risk_domains": ["privacy", "data_governance", "regulatory_compliance"]
+        },
+        {
+          "source_code": "SDAIA_AI_ETHICS",
+          "file": "sdaia_ai_ethics.md",
+          "title": "SDAIA AI Ethics Principles",
+          "publishing_body": "SDAIA",
+          "version": "1.0 (2023)",
+          "risk_domains": ["bias_fairness", "explainability", "privacy", "human_oversight", "cybersecurity"]
+        },
+        {
+          "source_code": "NDMO_DATA_GOV",
+          "file": "ndmo_data_governance.md",
+          "title": "NDMO National Data Governance Framework",
+          "publishing_body": "NDMO",
+          "version": "2.1 (2023)",
+          "risk_domains": ["data_governance", "privacy", "regulatory_compliance"]
+        },
+        {
+          "source_code": "NCA_ECC_2018",
+          "file": "nca_ecc.md",
+          "title": "NCA Essential Cybersecurity Controls",
+          "publishing_body": "NCA",
+          "version": "ECC-1:2018",
+          "risk_domains": ["cybersecurity", "risk_management"]
+        },
+        {
+          "source_code": "ITU_AI_FRAMEWORK",
+          "file": "itu_ai_framework.md",
+          "title": "ITU AI Readiness Framework & ITU-T Y.3172",
+          "publishing_body": "ITU",
+          "version": "Y.3172 (2022)",
+          "risk_domains": ["model_governance", "risk_management", "regulatory_compliance"]
+        }
+      ]
+    },
+    "finance_regulatory": {
+      "description": "Financial sector-specific regulatory sources applied to all financial institution assessments.",
+      "sources": [
+        {
+          "source_code": "SAMA_AI_GUIDANCE_2024",
+          "file": "sama_ai_guidance.md",
+          "title": "SAMA AI and Technology Guidance for Banks",
+          "publishing_body": "SAMA",
+          "version": "2024.1",
+          "risk_domains": ["model_governance", "explainability", "bias_fairness", "cybersecurity", "human_oversight"]
+        },
+        {
+          "source_code": "SAMA_CSF_2022",
+          "file": "sama_cyber_security_framework.md",
+          "title": "SAMA Cyber Security Framework for Financial Institutions",
+          "publishing_body": "SAMA",
+          "version": "CS-2022-01",
+          "risk_domains": ["cybersecurity", "third_party_risk", "risk_management"]
+        },
+        {
+          "source_code": "MRM_SR_11_7",
+          "file": "model_risk_management_sr11_7.md",
+          "title": "Model Risk Management (SR 11-7 / OCC / SAMA Adaptation)",
+          "publishing_body": "Federal Reserve / OCC / SAMA",
+          "version": "SR 11-7 Adapt.",
+          "risk_domains": ["model_governance", "third_party_risk", "risk_management"]
+        },
+        {
+          "source_code": "SAMA_OPEN_BANKING",
+          "file": "sama_open_banking.md",
+          "title": "SAMA Open Banking Framework - AI Provisions",
+          "publishing_body": "SAMA",
+          "version": "v1.2",
+          "risk_domains": ["cybersecurity", "privacy", "third_party_risk", "data_governance"]
+        },
+        {
+          "source_code": "BASEL_AI_PRINCIPLES",
+          "file": "basel_ai_principles.md",
+          "title": "Basel Committee AI Model Governance Principles",
+          "publishing_body": "BCBS",
+          "version": "BCBS Newsletter 2023",
+          "risk_domains": ["model_governance", "risk_management", "third_party_risk", "regulatory_compliance"]
+        },
+        {
+          "source_code": "AML_FRAUD_AI_GOV",
+          "file": "aml_fraud_ai_governance.md",
+          "title": "AML, Fraud Detection & Financial Crime AI Governance",
+          "publishing_body": "FATF / SAMA",
+          "version": "FATF Guidance 2024",
+          "risk_domains": ["model_governance", "explainability", "cybersecurity", "privacy", "regulatory_compliance"]
+        }
+      ]
+    }
+  }
+}

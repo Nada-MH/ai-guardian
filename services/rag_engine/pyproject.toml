@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-guardian-rag-engine"
+version = "0.1.0"
+description = "AI Guardian - RAG Ingestion, Hybrid Retrieval & Vector Store Service"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.30.0",
+    "qdrant-client>=1.9.0",
+    "cohere>=5.5.0",
+    "tiktoken>=0.7.0",
+    "unstructured[pdf,docx]>=0.14.0",
+    "pypdfium2>=4.28.0",
+    "python-docx>=1.1.0",
+    "camelot-py[cv]>=0.11.0",
+    "rank-bm25>=0.2.2",
+    "numpy>=1.26.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+]
