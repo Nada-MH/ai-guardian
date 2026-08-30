@@ -1,11 +1,12 @@
 {
-  "name": "ai-guardian",
-  "version": "3.0.0",
+  "name": "ai-guardian-web",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm --prefix apps/web run dev",
-    "build": "cd apps/web && npm install && npm run build && cd ../.. && node -e \"const fs=require('fs'); fs.cpSync('apps/web/.next', '.next', {recursive: true});\"",
-    "start": "next start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "axios": "^1.7.2",
