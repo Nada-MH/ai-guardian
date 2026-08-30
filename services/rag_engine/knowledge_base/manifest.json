@@ -1,10 +1,10 @@
 {
-  "version": "2.4.0",
-  "description": "AI Guardian Enterprise Regulatory Knowledge Base Manifest - Dual-Layer Structure",
-  "total_sources": 36,
+  "version": "3.0.0",
+  "description": "AI Guardian Comprehensive Regulatory Knowledge Base Manifest - Dual-Layer Structure with Deep Saudi GRC & Finance",
+  "total_sources": 49,
   "layers": {
     "core_ai_governance": {
-      "description": "International, regional, and Saudi national AI governance and cybersecurity frameworks applied across all enterprise AI assessments.",
+      "description": "International, regional, and Saudi national AI governance, cybersecurity, data protection, and GRC frameworks applied across all enterprise AI assessments.",
       "sources": [
         {
           "source_code": "ISO_IEC_42001",
@@ -135,6 +135,14 @@
           "risk_domains": ["data_governance", "privacy", "regulatory_compliance"]
         },
         {
+          "source_code": "NDMO_DATA_CLASSIFICATION_STD",
+          "file": "ndmo_data_classification_standards.md",
+          "title": "NDMO National Data Classification & Metadata Standards",
+          "publishing_body": "National Data Management Office (NDMO)",
+          "version": "2.1 (2023.03)",
+          "risk_domains": ["data_governance", "privacy", "cybersecurity"]
+        },
+        {
           "source_code": "NCA_ECC_2018",
           "file": "nca_ecc.md",
           "title": "NCA Essential Cybersecurity Controls",
@@ -151,6 +159,46 @@
           "risk_domains": ["cybersecurity", "third_party_risk"]
         },
         {
+          "source_code": "NCA_CSCC_2019",
+          "file": "nca_cscc_critical_controls.md",
+          "title": "NCA Critical Systems Cybersecurity Controls (CSCC-1:2019)",
+          "publishing_body": "National Cybersecurity Authority (NCA)",
+          "version": "CSCC-1:2019",
+          "risk_domains": ["cybersecurity", "risk_management"]
+        },
+        {
+          "source_code": "NCA_RISK_MGMT_TCC",
+          "file": "nca_cybersecurity_risk_management.md",
+          "title": "NCA Cybersecurity Risk Management & Telework Controls",
+          "publishing_body": "National Cybersecurity Authority (NCA)",
+          "version": "TCC-1:2020",
+          "risk_domains": ["cybersecurity", "third_party_risk", "risk_management"]
+        },
+        {
+          "source_code": "SAUDI_NAZAHA_INTEGRITY_GOV",
+          "file": "saudi_nazaha_integrity_governance.md",
+          "title": "Saudi Nazaha Corporate Integrity & Whistleblower Standard",
+          "publishing_body": "Oversight and Anti-Corruption Authority (Nazaha)",
+          "version": "2023.1",
+          "risk_domains": ["regulatory_compliance", "model_governance", "human_oversight"]
+        },
+        {
+          "source_code": "SAUDI_NEW_COMPANIES_LAW",
+          "file": "saudi_new_companies_law_governance.md",
+          "title": "Saudi Ministry of Commerce New Companies Law Governance",
+          "publishing_body": "Ministry of Commerce (MoC)",
+          "version": "Royal Decree M/132 (2023)",
+          "risk_domains": ["regulatory_compliance", "model_governance"]
+        },
+        {
+          "source_code": "SAUDI_GAC_COMPETITION_RULES",
+          "file": "saudi_competition_authority_compliance.md",
+          "title": "Saudi General Authority for Competition Compliance Standard",
+          "publishing_body": "General Authority for Competition (GAC)",
+          "version": "Royal Decree M/75 (2023)",
+          "risk_domains": ["regulatory_compliance", "bias_fairness"]
+        },
+        {
           "source_code": "ITU_AI_FRAMEWORK",
           "file": "itu_ai_framework.md",
           "title": "ITU AI Readiness Framework & ITU-T Y.3172",
@@ -161,8 +209,16 @@
       ]
     },
     "finance_regulatory": {
-      "description": "Financial sector-specific regulatory sources applied to all financial institution assessments across Banking, FinTech, Capital Markets, Insurance, and Wealth Management.",
+      "description": "Financial sector-specific GRC and regulatory sources applied to all financial institutions across Banking, Capital Markets, Insurance, FinTech, Payments, and Wealth Management.",
       "sources": [
+        {
+          "source_code": "SAMA_KEY_GOVERNANCE_PRINCIPLES",
+          "file": "sama_key_governance_principles.md",
+          "title": "SAMA Key Principles of Governance in Financial Institutions",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2021/2024 Update",
+          "risk_domains": ["model_governance", "human_oversight", "risk_management", "regulatory_compliance"]
+        },
         {
           "source_code": "SAMA_AI_GUIDANCE_2024",
           "file": "sama_ai_guidance.md",
@@ -178,6 +234,46 @@
           "publishing_body": "Saudi Central Bank (SAMA)",
           "version": "CS-2022-01",
           "risk_domains": ["cybersecurity", "third_party_risk", "risk_management"]
+        },
+        {
+          "source_code": "SAMA_BCM_FRAMEWORK",
+          "file": "sama_business_continuity_framework.md",
+          "title": "SAMA Business Continuity Management (BCM) Framework",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2022.1",
+          "risk_domains": ["risk_management", "cybersecurity", "third_party_risk"]
+        },
+        {
+          "source_code": "SAMA_ERM_FRAMEWORK",
+          "file": "sama_risk_management_framework.md",
+          "title": "SAMA Enterprise Risk Management (ERM) Framework",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2023.1",
+          "risk_domains": ["risk_management", "model_governance", "regulatory_compliance"]
+        },
+        {
+          "source_code": "SAMA_AML_CFT_RULES",
+          "file": "sama_aml_cft_rules.md",
+          "title": "SAMA Anti-Money Laundering & Counter-Terrorist Financing Rules",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2023.2",
+          "risk_domains": ["model_governance", "regulatory_compliance", "cybersecurity"]
+        },
+        {
+          "source_code": "SAMA_CONSUMER_PROTECTION",
+          "file": "sama_consumer_protection_principles.md",
+          "title": "SAMA Consumer Protection Principles & Responsible Lending",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2023.1",
+          "risk_domains": ["bias_fairness", "explainability", "regulatory_compliance"]
+        },
+        {
+          "source_code": "SAMA_INTERNAL_AUDIT_FRAMEWORK",
+          "file": "sama_internal_audit_framework.md",
+          "title": "SAMA Internal Audit Framework for Financial Institutions",
+          "publishing_body": "Saudi Central Bank (SAMA)",
+          "version": "2022.1",
+          "risk_domains": ["model_governance", "risk_management", "human_oversight"]
         },
         {
           "source_code": "SAMA_CLOUD_OUTSOURCING_AI",
@@ -202,6 +298,22 @@
           "publishing_body": "Saudi Central Bank (SAMA)",
           "version": "v1.2",
           "risk_domains": ["cybersecurity", "privacy", "third_party_risk", "data_governance"]
+        },
+        {
+          "source_code": "SAUDI_IA_GOVERNANCE_RULES",
+          "file": "saudi_insurance_authority_governance.md",
+          "title": "Saudi Insurance Authority (IA) Governance & Solvency Rules",
+          "publishing_body": "Insurance Authority (IA)",
+          "version": "2024.1",
+          "risk_domains": ["risk_management", "model_governance", "regulatory_compliance"]
+        },
+        {
+          "source_code": "CMA_CORPORATE_GOVERNANCE_REGS",
+          "file": "cma_corporate_governance_regulations.md",
+          "title": "Saudi CMA Corporate Governance Regulations",
+          "publishing_body": "Capital Market Authority (CMA)",
+          "version": "2023.2",
+          "risk_domains": ["model_governance", "human_oversight", "regulatory_compliance"]
         },
         {
           "source_code": "CMA_ALGO_TRADING_AI",
@@ -280,7 +392,7 @@
           "file": "singapore_mas_veritas_toolkit.md",
           "title": "MAS Veritas Toolkit 2.0 for Responsible AI",
           "publishing_body": "MAS",
-          "version": "2.0 (2023.11)",
+          "version": "2023.11",
           "risk_domains": ["bias_fairness", "explainability", "human_oversight", "data_governance"]
         },
         {
