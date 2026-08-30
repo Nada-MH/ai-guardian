@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "npm --prefix apps/web run dev",
-    "build": "cd apps/web && npm install && npm run build",
-    "start": "cd apps/web && npm start"
+    "build": "cd apps/web && npm install && npm run build && cd ../.. && node -e \"const fs=require('fs'); fs.cpSync('apps/web/.next', '.next', {recursive: true});\"",
+    "start": "next start"
   },
   "dependencies": {
     "axios": "^1.7.2",
