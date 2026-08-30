@@ -1093,6 +1093,13 @@ export interface AIQualityMetrics {
   score_consistency_pct: number;
 }
 
+export interface EvaluationMetrics {
+  retrieval: RetrievalMetrics;
+  evidence: EvidenceMetrics;
+  compliance: ComplianceMetrics;
+  ai_quality: AIQualityMetrics;
+}
+
 export interface EvaluationTestCaseResult {
   test_case_id: string;
   name: string;
