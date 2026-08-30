@@ -2,21 +2,23 @@
 
 <div align="center">
 
-[![Platform Version](https://img.shields.io/badge/version-2.4.0--enterprise-blue.svg?style=for-the-badge)](https://github.com)
-[![Audit Verification](https://img.shields.io/badge/Verification-100.0%25%20Passed-emerald.svg?style=for-the-badge)](https://github.com)
-[![Deterministic Engine](https://img.shields.io/badge/Scoring%20Engine-Deterministic%20Closed--Form-cyan.svg?style=for-the-badge)](https://github.com)
-[![Jurisdictions](https://img.shields.io/badge/Jurisdictions-KSA%20%7C%20EU%20%7C%20US%20%7C%20Global-purple.svg?style=for-the-badge)](https://github.com)
-[![Architecture](https://img.shields.io/badge/Architecture-Dual--Layer%20Cognitive%20%2B%20Deterministic-orange.svg?style=for-the-badge)](https://github.com)
+[![Platform Version](https://img.shields.io/badge/version-3.0.0--enterprise-blue.svg?style=for-the-badge)](https://github.com/Nada-MH/ai-guardian)
+[![Audit Verification](https://img.shields.io/badge/Verification-100.0%25%20Passed-emerald.svg?style=for-the-badge)](https://github.com/Nada-MH/ai-guardian)
+[![Knowledge Base](https://img.shields.io/badge/Knowledge%20Base-49%20Frameworks%20%7C%20258%20Clauses-purple.svg?style=for-the-badge)](https://github.com/Nada-MH/ai-guardian)
+[![Deterministic Engine](https://img.shields.io/badge/Scoring%20Engine-Deterministic%20Closed--Form-cyan.svg?style=for-the-badge)](https://github.com/Nada-MH/ai-guardian)
+[![Jurisdictions](https://img.shields.io/badge/Jurisdictions-Saudi%20Arabia%20(KSA)%20%7C%20EU%20%7C%20US%20%7C%20Global-darkgreen.svg?style=for-the-badge)](https://github.com/Nada-MH/ai-guardian)
+[![Architecture](https://img.shields.io/badge/Architecture-Dual--Layer%20Cognitive%20%2B%20Deterministic-orange.svg?style=for-the-badge)](https://github.com/Nada-MH/ai-guardian)
 [![License](https://img.shields.io/badge/License-Apache%202.0-slate.svg?style=for-the-badge)](LICENSE)
 
 <p align="center">
-  <b>A production-grade, continuous AI Governance, Risk Management & Regulatory Intelligence Platform designed for regulated industries (Banking, Fintech, Healthcare, Critical Infrastructure, Enterprise AI).</b>
+  <b>A production-grade, continuous AI Governance, Risk Management, Regulatory Intelligence & GRC Platform designed for regulated industries (Banking, Fintech, Capital Markets, Insurance, Healthcare, Critical Infrastructure, Enterprise AI).</b>
 </p>
 
 [Key Capabilities](#-key-capabilities) •
 [System Architecture](#-system-architecture) •
+[Regulatory Frameworks (49 Frameworks)](#-comprehensive-regulatory--grc-knowledge-base-49-frameworks) •
 [Continuous Governance Lifecycle](#-continuous-governance-lifecycle) •
-[Platform Subsystems](#-platform-subsystems-parts-1--13) •
+[Platform Subsystems (Parts 1 – 13)](#-platform-subsystems-parts-1--13) •
 [Quickstart](#-quickstart--installation) •
 [Verification Benchmark](#-automated-verification-suite-1515-passed) •
 [Security & Zero-Trust](#-security-privacy--zero-trust-architecture)
@@ -29,7 +31,7 @@
 
 Most AI compliance tools operate as simple LLM wrappers that prompt a language model to "check for compliance" — resulting in hallucinations, ungrounded advice, and non-reproducible score variances.
 
-**AI Guardian is fundamentally different.** It is built on a **Dual-Layer Architecture**:
+**AI Guardian is fundamentally different.** It is built on an enterprise **Dual-Layer Architecture**:
 1. **Cognitive Agent Layer**: Multi-agent LLM reasoning performs unstructured evidence extraction, document parsing, citation bounding-box mapping, and contextual failure scenario synthesis.
 2. **Deterministic Core Layer**: Mathematical closed-form scoring, strict 6-stage applicability filtering, immutable assessment versioning, 4-layer gap analysis, and SHA-256 cryptographically chained audit logging.
 
@@ -54,6 +56,7 @@ Most AI compliance tools operate as simple LLM wrappers that prompt a language m
 ## 🌟 Key Capabilities
 
 - 🔍 **8-Point Regulatory Provenance Layer**: Every piece of cited evidence is bound to an immutable 8-point metadata chain ($\text{Framework} \to \text{Requirement ID} \to \text{Clause} \to \text{Jurisdiction} \to \text{Doc Name} \to \text{Page} \to \text{Quote} \to \text{SHA-256 Chunk Hash}$).
+- 📚 **Comprehensive 49-Framework Knowledge Base**: 258 granular, clause-level requirements indexed across Saudi Banking/Finance GRC, Saudi Corporate Governance/Cybersecurity, and International AI Standards.
 - 🎯 **Deterministic Applicability Engine**: 14-dimension system profiling evaluated across a 6-stage deterministic pipeline. Automatically eliminates non-applicable frameworks with explicit statutory explainability.
 - 🧮 **Closed-Form Mathematical Scoring**: Strict 5-state evidence classification with mathematical penalty deductions (`CRITICAL`: $-15\%$, `HIGH`: $-7\%$ to $-10\%$, `MEDIUM`: $-4\%$, `LOW`: $-2\%$). Guaranteed **$0.0\%$ scoring variance** across runs.
 - 🔄 **Gap-to-Closure Governance Lifecycle**: Full remediation tracking ($\text{Detect} \to \text{Assign Owner} \to \text{Upload Evidence} \to \text{Reassess} \to \text{Chief Risk Officer Sign-off}$).
@@ -106,6 +109,73 @@ graph TD
 
 ---
 
+## 📜 Comprehensive Regulatory & GRC Knowledge Base (49 Frameworks)
+
+AI Guardian comes pre-equipped with **258 clause-level requirement chunks** categorized into three specialized regulatory domains:
+
+### 1. 🏦 Saudi Banking, Finance & FinTech GRC (15 Frameworks)
+| Framework Code | Authority | Full Title & Scope |
+|---|---|---|
+| `SAMA_KEY_GOVERNANCE_PRINCIPLES` | **SAMA** | Key Principles of Governance in Financial Institutions (3LoD, Board Committees, Fit & Proper) |
+| `SAMA_AI_GUIDANCE_2024` | **SAMA** | Artificial Intelligence & Technology Guidance for Banks (Model Risk, Validation, Oversight) |
+| `SAMA_CSF_2022` | **SAMA** | Cyber Security Framework for Financial Institutions (CS-2022-01 Controls) |
+| `SAMA_BCM_FRAMEWORK` | **SAMA** | Business Continuity Management Framework (RTO < 2h, RPO = 0, Geodiverse Active-Active DR) |
+| `SAMA_ERM_FRAMEWORK` | **SAMA** | Enterprise Risk Management Framework (Risk Appetite Statements, ICAAP, ILAAP) |
+| `SAMA_AML_CFT_RULES` | **SAMA** | Anti-Money Laundering & Counter-Terrorist Financing Rules (UBO 25%, PEP Screening, SAFIU STRs) |
+| `SAMA_CONSUMER_PROTECTION` | **SAMA** | Consumer Protection Principles & Responsible Lending (DBR Ceilings 33.33%/45%, APR Transparency) |
+| `SAMA_INTERNAL_AUDIT_FRAMEWORK` | **SAMA** | Internal Audit Framework for Financial Institutions (CAE BAC Reporting, RBIA Auditing) |
+| `SAMA_CLOUD_OUTSOURCING_AI` | **SAMA** | Outsourcing & Cloud Computing Framework for AI (In-Kingdom Localization, BYOK Encryption) |
+| `SAMA_ANTI_FRAUD_AI` | **SAMA** | Counter-Fraud, Financial Crime & Biometric AI Directive (Real-Time Scoring, PAD Level 2 Biometrics) |
+| `SAMA_OPEN_BANKING` | **SAMA** | SAMA Open Banking Framework — AI API Provisions & Security Controls |
+| `SAUDI_IA_GOVERNANCE_RULES` | **IA** | Saudi Insurance Authority Governance & Solvency Rules (Appointed Actuary, IFRS 17, 100% Solvency) |
+| `CMA_ALGO_TRADING_AI` | **CMA** | Saudi CMA Algorithmic & High-Frequency AI Trading Framework (Kill-Switches, Pre-Trade Risk Filters) |
+| `ZATCA_AI_E_INVOICING` | **ZATCA** | Electronic Invoicing (Fatoora Phase 2) & Tax AI Governance Standard (SHA-256 Chaining, Clearance APIs) |
+| `AML_FRAUD_AI_GOV` | **FATF / SAMA** | AML, Fraud Detection & Financial Crime AI Governance Standards |
+
+### 2. 🇸🇦 Saudi General Corporate Governance, Cybersecurity & National Compliance (12 Frameworks)
+| Framework Code | Authority | Full Title & Scope |
+|---|---|---|
+| `CMA_CORPORATE_GOVERNANCE_REGS` | **CMA** | Saudi CMA Corporate Governance Regulations (Shareholder Rights, Fiduciary Duties, Blackout Periods) |
+| `SAUDI_NEW_COMPANIES_LAW` | **MoC** | Ministry of Commerce New Companies Law (Royal Decree M/132, Director Liability, SJSC Governance) |
+| `SAUDI_NAZAHA_INTEGRITY_GOV` | **Nazaha** | Oversight and Anti-Corruption Authority Corporate Integrity & Whistleblower Standard |
+| `SAUDI_GAC_COMPETITION_RULES` | **GAC** | General Authority for Competition Anti-Monopoly Standard (Algorithmic Collusion, Economic Filings) |
+| `NCA_ECC_2018` | **NCA** | Essential Cybersecurity Controls (ECC-1:2018 Standard Baseline) |
+| `NCA_CCC_2020` | **NCA** | Cloud Cybersecurity Controls (CCC-1:2020 for Sovereign AI Infrastructure) |
+| `NCA_CSCC_2019` | **NCA** | Critical Systems Cybersecurity Controls (CSCC-1:2019 Defense-in-Depth for Critical Infrastructure) |
+| `NCA_RISK_MGMT_TCC` | **NCA** | Cybersecurity Risk Management & Telework Controls (TCC-1:2020 & Threat Defense) |
+| `NDMO_DATA_GOV` | **NDMO** | National Data Governance Framework (Data Management, Quality, Governance) |
+| `NDMO_DATA_CLASSIFICATION_STD` | **NDMO** | National Data Classification & Metadata Standards (4-Tier Classification: Top Secret, Secret, Restricted, Public) |
+| `SAUDI_PDPL` | **SDAIA** | Saudi Personal Data Protection Law (Royal Decree M/19) |
+| `SAUDI_PDPL_EXEC_REGS_2024` | **SDAIA** | Saudi PDPL Executive Regulations & Cross-Border Transfer Rules (Article 29 Automated Decisions, DPIA) |
+| `SDAIA_AI_ETHICS` | **SDAIA** | National AI Ethics Principles (Fairness, Transparency, Accountability, Safety) |
+| `SDAIA_GENAI_GUIDELINES` | **SDAIA** | Generative AI & Large Language Model Governance Guidelines |
+| `SDAIA_GENAI_DEEPFAKE_2024` | **SDAIA** | Generative AI, LLM & Synthetic Media Ethics Code (C2PA Watermarking, Synthetic Disclosure) |
+| `SAUDI_NSDAI_STRATEGY` | **SDAIA** | National Strategy for Data & AI Governance Mandates (Sovereignty, Certified AI Officers) |
+
+### 3. 🌐 Global & International AI Standards (22 Frameworks)
+| Framework Code | Organization | Full Title & Scope |
+|---|---|---|
+| `ISO_IEC_42001` | **ISO / IEC** | ISO/IEC 42001:2023 Artificial Intelligence Management System (AIMS) |
+| `ISO_IEC_23894` | **ISO / IEC** | ISO/IEC 23894:2023 AI Risk Management Guidance |
+| `ISO_IEC_22989_24028` | **ISO / IEC** | ISO/IEC 22989 & 24028: AI Trustworthiness, Robustness & Adversarial Defense |
+| `NIST_AI_RMF` | **NIST** | NIST AI Risk Management Framework 1.0 (NIST AI 100-1) |
+| `NIST_AI_600_1_GENAI` | **NIST** | NIST AI 600-1 Generative AI Profile & Risk Management (12 GenAI Threat Vectors) |
+| `IEEE_7000_ETHICAL_AI` | **IEEE** | IEEE 7000-2021 Standard Model for Addressing Ethical Concerns in System Design |
+| `EU_AI_ACT_2024` | **EU Parliament** | EU Artificial Intelligence Act (Regulation 2024/1689 High-Risk System Mandates) |
+| `MRM_SR_11_7` | **Fed / OCC** | Model Risk Management Guidance (SR 11-7 / OCC 2011-12 Soundness) |
+| `BASEL_AI_PRINCIPLES` | **BCBS** | Basel Committee AI Model Governance Principles in Banking Supervision |
+| `EBA_AI_GUIDELINES_BANKING` | **EBA** | European Banking Authority Guidelines on AI in Credit Risk & AML Underwriting |
+| `FSB_IOSCO_AI_MARKET_CONDUCT`| **FSB / IOSCO** | Financial Stability Board & IOSCO Guidance on AI in Financial Markets |
+| `UK_FCA_PRA_AI_SUPERVISION` | **UK FCA / PRA** | UK FCA & PRA Supervisory Approach to AI in Financial Services (SM&CR, Consumer Duty) |
+| `MAS_FEAT_PRINCIPLES` | **MAS** | Monetary Authority of Singapore FEAT Principles (Fairness, Ethics, Accountability, Transparency) |
+| `MAS_VERITAS_TOOLKIT_2` | **MAS** | MAS Veritas Toolkit 2.0 for Responsible AI (Quantitative Disparate Impact & Parity Metrics) |
+| `HKMA_AI_REGULATION` | **HKMA** | Hong Kong Monetary Authority High-Level Principles on AI in Banking |
+| `OECD_AI_PRINCIPLES` | **OECD** | OECD Principles on Artificial Intelligence (2024 Updated Recommendation) |
+| `UNESCO_AI_ETHICS` | **UNESCO** | UNESCO Recommendation on the Ethics of Artificial Intelligence (2021) |
+| `ITU_AI_FRAMEWORK` | **ITU** | ITU AI Readiness Framework & ITU-T Y.3172 Standard |
+
+---
+
 ## 🔄 Continuous Governance Lifecycle
 
 AI Guardian executes a complete 20-step continuous lifecycle:
@@ -117,7 +187,7 @@ AI Guardian executes a complete 20-step continuous lifecycle:
 2. Document Processing & SHA-256 Chunk Hashing
        │
        ▼
-3. 8-Point Regulatory Provenance Layer (SAMA, PDPL, SDAIA, ISO 42001, EU AI Act, NIST)
+3. 8-Point Regulatory Provenance Layer (SAMA, CMA, PDPL, SDAIA, ISO, NIST, EU AI Act)
        │
        ▼
 4. Deterministic Applicability Engine (6-Stage Pipeline, 14 Dimensions)
@@ -172,23 +242,6 @@ AI Guardian executes a complete 20-step continuous lifecycle:
 
 ---
 
-## 📜 Regulatory Frameworks Supported
-
-AI Guardian includes pre-ingested, clause-level knowledge bases across 10 major standards:
-
-1. 🇸🇦 **SAMA AI and Technology Guidance for Banks (2024)** — Governance, Risk Management, Human Oversight.
-2. 🇸🇦 **SAMA Cyber Security Framework (CSF 3.2)** — Access Control, Infrastructure Security, Threat Defense.
-3. 🇸🇦 **Saudi Personal Data Protection Law (PDPL Royal Decree M/19)** — Data Subject Rights, Retention, Privacy.
-4. 🇸🇦 **SDAIA National AI Ethics Principles (2023)** — Fairness, Transparency, Accountability, Safety.
-5. 🇸🇦 **SDAIA Generative AI & Large Language Model Guidelines** — Model Alignment, Content Guardrails.
-6. 🌐 **ISO/IEC 42001:2023 AI Management System (AIMS)** — Continuous Risk Assessment, Model Validation.
-7. 🇪🇺 **EU Artificial Intelligence Act (2024)** — Annex III High-Risk Classification, Technical Documentation.
-8. 🇺🇸 **Federal Reserve / OCC Model Risk Management (SR 11-7)** — Independent Conceptual Soundness & Validation.
-9. 🇺🇸 **NIST AI Risk Management Framework 1.0 (AI RMF)** — Govern, Map, Measure, Manage functions.
-10. 🇸🇬 **Monetary Authority of Singapore (MAS FEAT Principles)** — Fairness, Ethics, Accountability, Transparency.
-
----
-
 ## 🚀 Quickstart & Installation
 
 ### Prerequisites
@@ -199,7 +252,7 @@ AI Guardian includes pre-ingested, clause-level knowledge bases across 10 major 
 
 ### 1. Clone & Configure
 ```bash
-git clone https://github.com/your-org/ai-guardian.git
+git clone https://github.com/Nada-MH/ai-guardian.git
 cd ai-guardian
 
 # Copy environment template
